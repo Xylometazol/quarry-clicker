@@ -1,0 +1,15 @@
+/* The width of the "resources" div */
+.resources {
+    width:25%;
+}
+
+/* The height of each row in the table inside of "resources" div */
+.resources table tr {
+    line-height: 25px;
+}
+
+
+/* The space on the right of each cell on the "resources" div */
+.resources table tr td{
+    padding-right:10px;
+}
