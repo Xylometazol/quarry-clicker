@@ -14,7 +14,7 @@ var Resource = (function () {
 }());
 var wood = new Resource("amountWood");
 window.onload = function () {
-    wood.setAmount(1);
+    wood.setAmount();
 };
 function addWood() {
     wood.setAmount(wood.getAmount() + 1);
