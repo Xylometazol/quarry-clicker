@@ -22,13 +22,41 @@ var Resource = (function () {
     };
     return Resource;
 }());
+// Default wood/stone per click
+var woodPower = 1;
+var stonePower = 1;
+// Making a variable to check if you already have it
+var upgraded = 0;
+// Upgrading to stone hatchet
+function upgradeStoneHatchet() {
+    if (upgraded === 1) {
+        alert("You've already bought this");
+    }
+    else if (wood.amount >= 10 && stone.amount >= 15) {
+        woodPower = woodPower * 3;
+        wood.amount = wood.amount - 10;
+        stone.amount = stone.amount - 15;
+        alert("Stone Hatchet bought!");
+        upgraded = 1;
+        update();
+    }
+    else {
+        alert("Sorry, you don't have enough resources");
+    }
+}
+// Creating the resource var's
 var wood, stone, copper, tin, iron, coal, steel;
+// Function for updating after buying upgrade
+function update() {
+    wood.setAmount(wood.getAmount());
+    stone.setAmount(stone.getAmount());
+}
 // Function being called by index.html for button to add one wood
 function addWood() {
-    wood.setAmount(wood.getAmount() + 1);
+    wood.setAmount(wood.getAmount() + woodPower);
 }
 function addStone() {
-    stone.setAmount(stone.getAmount() + 1);
+    stone.setAmount(stone.getAmount() + stonePower);
 }
 $(function () {
     var resources = [

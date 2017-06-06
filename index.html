@@ -13,16 +13,23 @@
     </head>
     <body>
         <center>
-            <h1>== Town Name ==</h1>
+            <div class="townName"
+                <h1>==| Town Name |==</h1>
+            </div>
         </center> 
          <div class="resources">
              <h2>Resources:</h2>
-             <table id="resourceTable">
-             </table>
+             <table id="resourceTable"></table>
          </div>
          <div class="buttons">
-            <button onclick="addWood()">Chop wood</button>
+            <button onclick="addWood()">Chop wood</button><br/>
             <button onclick="addStone()">Mine stone</button>
+         </div>
+         <div class="upgrades">
+            <button onclick="upgradeStoneHatchet()"><u>Stone Hatchet</u>
+                <br/>Stone:15
+                <br/>Wood:10
+            </button>
          </div>
     </body>
 </html>
