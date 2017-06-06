@@ -6,7 +6,7 @@
 
 /* The height of each row in the table inside of "resources" div */
 .resources table tr {
-    line-height: 18px;
+    line-height: 15px;
 }
 
 
@@ -27,4 +27,8 @@
 .buttons button{
     margin-bottom: 5px;
     width: 90px;
+}
+
+h2{
+    -webkit-margin-after: 0.2em;
 }
