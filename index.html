@@ -2,8 +2,10 @@
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="style.css"/>
+        <script type="text/javascript" src="js/jquery-3.2.1.js"></script>
         <script type="text/javascript" src="js/scripts.js"></script>
         <link rel="icon" href="bin/favicon.ico"/>
+        
 
         <title>
             Quarry Clicker!
@@ -11,47 +13,16 @@
     </head>
     <body>
         <center>
-            <h1>===== Shittyburg =====</h1>
+            <h1>== Town Name ==</h1>
         </center> 
          <div class="resources">
              <h2>Resources:</h2>
-             <table>
-                <tr>
-                <td>Wood</td>
-                <td id="amountWood">0</td>
-                </tr>
-               
-                <tr>
-                <td>Stone</td>
-                <td id="amountStone">0</td>
-                </tr>
-
-                <tr>
-                <td>Copper</td>
-                <td id="amountCopper">0</td>
-                </tr>
-
-                <tr>
-                <td>Tin</td>
-                <td id="amountTin">0</td>
-                </tr>
-
-                <tr>
-                <td>Iron</td>
-                <td id="amountIron">0</td>
-                </tr>
-
-                <tr>
-                <td>Coal</td>
-                <td id="amountCoal">0</td>
-                </tr>
-
-                <tr>
-                <td>Steel</td>
-                <td id="amountSteel">0</td>
-                </tr>
+             <table id="resourceTable">
              </table>
          </div>
-        <button onclick="addWood()">Chop wood</button>
+         <div class="buttons">
+            <button onclick="addWood()">Chop wood</button>
+            <button onclick="addStone()">Mine stone</button>
+         </div>
     </body>
 </html>
