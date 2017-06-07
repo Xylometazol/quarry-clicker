@@ -26,10 +26,11 @@ var Resource = (function () {
 var woodPower = 1;
 var stonePower = 1;
 // Making a variable to check if you already have it
-var upgraded = 0;
+var upgrade1 = 0;
+var upgrade2 = 0;
 // Upgrading to stone hatchet
 function upgradeStoneHatchet() {
-    if (upgraded === 1) {
+    if (upgrade1 === 1) {
         alert("You've already bought this");
     }
     else if (wood.amount >= 10 && stone.amount >= 15) {
@@ -37,7 +38,23 @@ function upgradeStoneHatchet() {
         wood.amount = wood.amount - 10;
         stone.amount = stone.amount - 15;
         alert("Stone Hatchet bought!");
-        upgraded = 1;
+        upgrade1 = 1;
+        update();
+    }
+    else {
+        alert("Sorry, you don't have enough resources");
+    }
+}
+function upgradeStonePickaxe() {
+    if (upgrade2 === 1) {
+        alert("You've already bought this");
+    }
+    else if (wood.amount >= 10 && stone.amount >= 15) {
+        stonePower = stonePower * 3;
+        wood.amount = wood.amount - 10;
+        stone.amount = stone.amount - 15;
+        alert("Stone Pickaxe bought!");
+        upgrade2 = 1;
         update();
     }
     else {
