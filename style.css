@@ -1,5 +1,5 @@
-.townName{
-    font-size:4em;
+#townName{
+    font-size:2.5em;
     font-weight: bold;
 }
 
@@ -44,7 +44,19 @@ h2{
     -webkit-margin-after: 0.2em;
 }
 
-.upgrades{
+#upgrades{
     float:right;
     padding-top: 50px;
+    width:20%;
+}
+
+.notification{
+    text-align: center;
+    padding-bottom: 0.5em;
+    color: darkred;
+    font-weight: bold;
+}
+
+#upgrades button{
+    width:49.4%;
 }

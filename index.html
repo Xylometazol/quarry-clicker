@@ -13,9 +13,7 @@
     </head>
     <body>
         <center>
-            <div class="townName"
-                <h1>==| Town Name |==</h1>
-            </div>
+                <h1 id="townName">==| Town Name |==</h1>
         </center> 
          <div class="resources">
              <h2>Resources:</h2>
@@ -25,15 +23,10 @@
             <button onclick="addWood()">Chop wood</button><br/>
             <button onclick="addStone()">Mine stone</button>
          </div>
-         <div class="upgrades">
-            <button onclick="upgradeStoneHatchet()"><u>Stone Hatchet</u>
-                <br/>Wood:10
-                <br/>Stone:15
-            </button>
-            <button onclick="upgradeStonePickaxe()"><u>Stone Pickaxe</u>
-                <br/>Wood:10
-                <br/>Stone:15
-            </button>
+         <div id="upgrades">
+             <div id="shopNotification" class="notification">
+                   &nbsp;
+             </div>
          </div>
     </body>
 </html>
