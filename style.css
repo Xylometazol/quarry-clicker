@@ -4,6 +4,10 @@
 }
 
 
+body {
+    zoom:150%;    
+}
+
 
 /* The width of the "resources" div */
 .resources {
@@ -46,7 +50,7 @@ h2{
 
 #upgrades{
     float:right;
-    padding-top: 50px;
+    padding-top: 0px;
     width:20%;
 }
 

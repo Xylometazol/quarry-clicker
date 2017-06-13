@@ -10,20 +10,14 @@ $(function(){
     $("#townName").text("==| "+townName+" |==");
 });
 
-
+var woodPower = 1;
+var stonePower = 1;
 /*
 
 
 
-function disableButton(buttonID:string):void{
-    $(`#${buttonID}`).attr("disabled", "disabled");
-}
-
-
-
 // Default wood/stone per click
-var woodPower = 1;
-var stonePower = 1;
+
 
 // Making a variable to check if you already have it
 var upgrade1 = false;

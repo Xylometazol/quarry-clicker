@@ -50,19 +50,14 @@ $(function () {
     }
     $("#townName").text("==| " + townName + " |==");
 });
+var woodPower = 1;
+var stonePower = 1;
 /*
 
 
 
-function disableButton(buttonID:string):void{
-    $(`#${buttonID}`).attr("disabled", "disabled");
-}
-
-
-
 // Default wood/stone per click
-var woodPower = 1;
-var stonePower = 1;
+
 
 // Making a variable to check if you already have it
 var upgrade1 = false;
@@ -102,12 +97,12 @@ function upgradeStonePickaxe(){
 
 */
 var Upgrade = (function () {
-    function Upgrade(name, displayName) {
+    function Upgrade(name, displayName, description) {
         this.owned = false;
         this.name = name;
         var parent = $("#upgrades");
         this.displayName = displayName;
-        parent.append($("<button id=\"upgrade" + name + "\">\n                        <u>" + displayName + "</u><br/></button>"));
+        parent.append($("<button id=\"upgrade" + name + "\">\n                        <u>" + displayName + "</u><br/>" + description + "</button>"));
         this.button = $("#upgrade" + name);
         var self = this;
         this.button.click(function () { self.tryPurchase(); });
@@ -124,7 +119,6 @@ var Upgrade = (function () {
             shopNotification(this.displayName + " bought!");
             this.owned = true;
             this.button.attr("disabled", "disabled");
-            return;
         }
         shopNotification("You don't have enough resources");
     };
@@ -132,9 +126,11 @@ var Upgrade = (function () {
 }());
 var stoneAxe;
 var stonePickaxe;
+var woodenHut;
 $(function () {
-    stoneAxe = new Upgrade("stoneAxe", "Stone Axe");
-    stonePickaxe = new Upgrade("stonePickaxe", "Stone Pickaxe");
+    stoneAxe = new Upgrade("stoneAxe", "Stone Axe", "Chop wood faster");
+    stonePickaxe = new Upgrade("stonePickaxe", "Stone Pickaxe", "Mine stone faster");
+    woodenHut = new Upgrade("woodenHut", "Wooden Hut", "Have someone move in");
 });
 function shopNotification(message) {
     $("#shopNotification").text(message);
