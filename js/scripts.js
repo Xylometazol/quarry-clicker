@@ -1,3 +1,13 @@
+var Price = (function () {
+    function Price(amount, resource) {
+        this.amount = amount;
+        this.resource = resource;
+    }
+    Price.prototype.canAfford = function () {
+        return this.amount > this.resource.getAmount();
+    };
+    return Price;
+}());
 var Resource = (function () {
     // Function that's run when objects are created to give initial values 
     function Resource(resourceName) {
@@ -56,8 +66,6 @@ var stonePower = 1;
 
 
 
-// Default wood/stone per click
-
 
 // Making a variable to check if you already have it
 var upgrade1 = false;
@@ -97,11 +105,18 @@ function upgradeStonePickaxe(){
 
 */
 var Upgrade = (function () {
-    function Upgrade(name, displayName, description) {
+    function Upgrade(name, displayName, description, priceList) {
         this.owned = false;
         this.name = name;
         var parent = $("#upgrades");
         this.displayName = displayName;
+        for (var name in priceList) {
+            if (!priceList.hasOwnProperty(name)) {
+                continue;
+            }
+            var doc = document;
+            this.priceList.push(new Price(priceList[name], doc[name]));
+        }
         parent.append($("<button id=\"upgrade" + name + "\">\n                        <u>" + displayName + "</u><br/>" + description + "</button>"));
         this.button = $("#upgrade" + name);
         var self = this;
@@ -128,7 +143,7 @@ var stoneAxe;
 var stonePickaxe;
 var woodenHut;
 $(function () {
-    stoneAxe = new Upgrade("stoneAxe", "Stone Axe", "Chop wood faster");
+    stoneAxe = new Upgrade("stoneAxe", "Stone Axe", "Chop wood faster", { wood: 10, stone: 10 });
     stonePickaxe = new Upgrade("stonePickaxe", "Stone Pickaxe", "Mine stone faster");
     woodenHut = new Upgrade("woodenHut", "Wooden Hut", "Have someone move in");
 });

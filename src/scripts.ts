@@ -16,8 +16,6 @@ var stonePower = 1;
 
 
 
-// Default wood/stone per click
-
 
 // Making a variable to check if you already have it
 var upgrade1 = false;
